@@ -1,0 +1,67 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+@font-face {
+    font-family: pokemon-font;
+    src: url('../fonts/pokemon-font.ttf');
+}
+
+body {
+    background-color: rgb(230, 230, 192);
+}
+
+.pokeball button {
+    background-color: transparent;
+    border-color: transparent;
+    padding: 2%;
+}
+
+.pokeball-img {
+    width: 46px;
+    height: 45px;
+}
+
+.pokeball-img:hover {
+    transform: rotate(30deg);
+}
+
+.pokemon-container {
+    width: 600px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    background-color: black;
+}
+
+.card {
+    background-color: black;
+    font-family: pokemon-font;
+}
+
+.pokemon-img {
+    background: rgb(125,125,125);
+    background: radial-gradient(circle, rgba(125,125,125,1) 6%, rgba(119,119,119,1) 15%, rgba(0,0,0,1) 40%);
+}
+
+.pokemon-img img {
+    display: block;
+    width: 220px;
+    height: 220px;
+    margin: 20px auto;
+}
+
+.poke-name {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+}
+
+.poke-name a {
+    text-decoration: none; 
+}
