@@ -8,8 +8,12 @@
     src: url('../fonts/pokemon-font.ttf');
 }
 
+:root {
+    --shadow: white;
+}
+
 body {
-    background-color: rgb(230, 230, 192);
+    background-color: rgb(0, 0, 0);
 }
 
 .pokeball button {
@@ -36,6 +40,34 @@ body {
     background-color: black;
 }
 
+.pokemon-container::before {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: var(--shadow);
+    transform: translate3d(0px, 0px, 0) scale(1);
+    filter: blur(25px);
+    opacity: var(0.5);
+    transition: opacity 0.3s;
+    border-radius: inherit;
+}
+
+.pokemon-container::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: inherit;
+    border-radius: inherit;
+}
+        
 .card {
     background-color: black;
     font-family: pokemon-font;
