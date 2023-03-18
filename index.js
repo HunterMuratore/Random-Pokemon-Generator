@@ -21,27 +21,27 @@ const typeColor = {
     dark: "#624F21",
     steel: "#A5A5A5"
 };
-// const shadowColor = {
-//     bug: "#BDE942",
-//     dragon: "#C06EEF",
-//     electric: "#FFFF8E",
-//     fairy: "#FFDBEE",
-//     fighting: "#FF3D3D",
-//     fire: "#FFF95B",
-//     flying: "#D5A7E9",
-//     grass: "#62FF91",
-//     ground: "#FFF39B",
-//     ghost: "#B799F3",
-//     ice: "#D0FBFF",
-//     normal: "#ECDBC2",
-//     poison: "#DFA6EB",
-//     psychic: "#FFB3DA",
-//     rock: "#DCCE6D",
-//     water: "#6BA6FF",
-//     dark: "#847553",
-//     steel: "#DCDCDC"
-// };
-const shadowColor = {
+const shadowColor1 = {
+    bug: "#BDE942",
+    dragon: "#C06EEF",
+    electric: "#FFFF8E",
+    fairy: "#FFDBEE",
+    fighting: "#FF3D3D",
+    fire: "#FFF95B",
+    flying: "#D5A7E9",
+    grass: "#62FF91",
+    ground: "#FFF39B",
+    ghost: "#B799F3",
+    ice: "#D0FBFF",
+    normal: "#ECDBC2",
+    poison: "#DFA6EB",
+    psychic: "#FFB3DA",
+    rock: "#DCCE6D",
+    water: "#6BA6FF",
+    dark: "#847553",
+    steel: "#DCDCDC"
+};
+const shadowColor2 = {
     bug: "#8DC000",
     dragon: "#7B00C1",
     electric: "#FAFA27",
@@ -98,9 +98,9 @@ let generatePokemon = (data) => {
     let themeColor2 = "";
     // Check if Pokemon has 2 types
     if (data.types.length == 2) {
-        themeColor2 = shadowColor[data.types[1].type.name];
+        themeColor2 = shadowColor2[data.types[1].type.name];
     } else {
-        themeColor2 = typeColor[data.types[0].type.name];
+        themeColor2 = shadowColor1[data.types[0].type.name];
     }
     const pokeName = document.querySelector(".poke-name a");
     const shadow = document.querySelector('.pokemon-container');
