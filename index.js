@@ -21,7 +21,7 @@ const typeColor = {
     dark: "#624F21",
     steel: "#A5A5A5"
 };
-const shadowColor1 = {
+const shadowColor = {
     bug: "#BDE942",
     dragon: "#C06EEF",
     electric: "#FFFF8E",
@@ -40,26 +40,6 @@ const shadowColor1 = {
     water: "#6BA6FF",
     dark: "#847553",
     steel: "#DCDCDC"
-};
-const shadowColor2 = {
-    bug: "#8DC000",
-    dragon: "#7B00C1",
-    electric: "#FAFA27",
-    fairy: "#FCC2DF",
-    fighting: "#B30000",
-    fire: "#FF9317",
-    flying: "#B096BC",
-    grass: "#00B235",
-    ground: "#D5C660",
-    ghost: "#685A87",
-    ice: "#88E9F3",
-    normal: "#B7A68F",
-    poison: "#9557A1",
-    psychic: "#FA7DBC",
-    rock: "#A69B4F",
-    water: "#374EE6",
-    dark: "#624F21",
-    steel: "#A5A5A5"
 };
 
 let getPokeData = () => {
@@ -98,12 +78,12 @@ let generatePokemon = (data) => {
     let themeColor2 = "";
     // Check if Pokemon has 2 types
     if (data.types.length == 2) {
-        themeColor2 = shadowColor2[data.types[1].type.name];
+        themeColor2 = typeColor[data.types[1].type.name];
     } else {
-        themeColor2 = shadowColor1[data.types[0].type.name];
+        themeColor2 = shadowColor[data.types[0].type.name];
     }
     const pokeName = document.querySelector(".poke-name a");
-    const shadow = document.querySelector('.pokemon-container');
+    const shadow = document.querySelector('.pokemon-img');
     pokeName.style.color = `${themeColor}`;
     shadow.style.setProperty("--shadow", `linear-gradient(0deg, ${themeColor} 0%, ${themeColor2} 100% )`);
 };
